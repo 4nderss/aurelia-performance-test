@@ -1,0 +1,19 @@
+<template>
+  <h1>Users (${users.length})</h1>
+  <h2>Render took ${performanceTime} ms</h2>
+  <table>
+    <thead>
+      <th repeat.for="property of properties">
+        ${property}
+        </th>
+    </thead>
+    <tbody repeat.for="user of users">
+      <tr>
+        <td repeat.for="property of properties">
+          ${user[property]}
+        </tr>
+      </tbody>
+    </table>
+    
+    
+  </template>
