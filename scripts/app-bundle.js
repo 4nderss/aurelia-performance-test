@@ -100,5 +100,5 @@ define('resources/index',["require", "exports"], function (require, exports) {
     exports.configure = configure;
 });
 
-define('text!app.html', ['module'], function(module) { module.exports = "<template>\n  <h1>Users (${users.length})</h1>\n  <h2>Render took ${performanceTime} ms</h2>\n  <table>\n    <thead>\n      <th repeat.for=\"property of properties\">\n        ${property}\n      </th>\n    </thead>\n    <tbody repeat.for=\"user of users\">\n      <tr>\n        <td repeat.for=\"property of properties\">\n          ${user[property]}\n      </tr>\n    </tbody>\n  </table>\n\n\n</template>"; });
+define('text!app.html', ['module'], function(module) { module.exports = "<template>\n  <h1>Users (${users.length})</h1>\n  <h2>Render took ${performanceTime} ms</h2>\n  <table>\n    <thead>\n      <tr>\n        <th repeat.for=\"property of properties\">\n          ${property}\n        </th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr repeat.for=\"user of users\">\n     \n          <td repeat.for=\"property of properties\">\n            ${user[property]}\n          </td>\n        </tr>\n    </tbody>\n  </table>\n\n\n</template>"; });
 //# sourceMappingURL=app-bundle.js.map

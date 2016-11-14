@@ -3,15 +3,19 @@
   <h2>Render took ${performanceTime} ms</h2>
   <table>
     <thead>
-      <th repeat.for="property of properties">
-        ${property}
-      </th>
-    </thead>
-    <tbody repeat.for="user of users">
       <tr>
-        <td repeat.for="property of properties">
-          ${user[property]}
+        <th repeat.for="property of properties">
+          ${property}
+        </th>
       </tr>
+    </thead>
+    <tbody>
+      <tr repeat.for="user of users">
+     
+          <td repeat.for="property of properties">
+            ${user[property]}
+          </td>
+        </tr>
     </tbody>
   </table>
 
