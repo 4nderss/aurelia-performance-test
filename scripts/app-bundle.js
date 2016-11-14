@@ -26,7 +26,7 @@ define('app',["require", "exports", "aurelia-fetch-client", "aurelia-framework"]
                 .then(function (users) {
                 var res = users;
                 var usersToAdd = [];
-                while (_this.users.length < 1000) {
+                while (usersToAdd.length < 1000) {
                     for (var index = 0; index < res.length; index++) {
                         var element = res[index];
                         usersToAdd.push(element);

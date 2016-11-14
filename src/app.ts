@@ -23,7 +23,7 @@ export class App {
       .then(users => {
         let res = users as any;
         let usersToAdd = [];
-        while (this.users.length < 1000) {
+        while (usersToAdd.length < 1000) {
           for (var index = 0; index < res.length; index++) {
             var element = res[index];
             usersToAdd.push(element);
@@ -31,8 +31,8 @@ export class App {
         }
         return usersToAdd;
       }).then(usersToAdd => {
-      this.users =usersToAdd;
-      
+        this.users = usersToAdd;
+
       }).then(x => {
         this.properties = [];
         let object = this.users[0];
