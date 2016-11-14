@@ -22,13 +22,17 @@ export class App {
       .then(response => response.json())
       .then(users => {
         let res = users as any;
-        this.users = [];
+        let usersToAdd = [];
         while (this.users.length < 1000) {
           for (var index = 0; index < res.length; index++) {
             var element = res[index];
-            this.users.push(element);
+            usersToAdd.push(element);
           }
         }
+        return usersToAdd;
+      }).then(usersToAdd => {
+      this.users =usersToAdd;
+      
       }).then(x => {
         this.properties = [];
         let object = this.users[0];
